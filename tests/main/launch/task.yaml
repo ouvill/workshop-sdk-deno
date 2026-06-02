@@ -1,0 +1,14 @@
+summary: Launch workshop with deno SDK
+
+prepare: |
+  envsubst '${BASE}' <workshop.yaml.in >workshop.yaml
+  workshop launch
+
+restore: |
+  workshop remove || true
+
+execute: |
+  # workshop exec -- deno --version
+
+debug: |
+  workshop tasks

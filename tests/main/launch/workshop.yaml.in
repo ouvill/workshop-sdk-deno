@@ -1,0 +1,4 @@
+name: test-deno
+base: ${BASE}
+sdks:
+  - name: try-deno

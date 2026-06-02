@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright 2026 Canonical Ltd.
+
+# Workshop lock file — auto-generated on first workshop interaction.
+# See https://ubuntu.com/workshop/docs/reference/definition-files/workshop-definition.md
+.workshop.lock

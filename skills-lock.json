@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "skills": {
+    "sdk-designer": {
+      "source": "canonical/template-sdk",
+      "sourceType": "github",
+      "skillPath": ".github/skills/sdk-designer/SKILL.md",
+      "computedHash": "9cb3f8edc744a8abaed7742bf72288b5b760dd6db57a51f2081c99b83a535d3f"
+    },
+    "use-workshop": {
+      "source": "canonical/use-workshop-skill",
+      "ref": "main",
+      "sourceType": "github",
+      "skillPath": ".github/skills/use-workshop/SKILL.md",
+      "computedHash": "f95b8c77c98a4f6518e441ba1885dd379cff94ec6ca1fd11d00354f31ab866bf"
+    }
+  }
+}

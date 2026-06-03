@@ -1,4 +1,4 @@
 name: test-deno
 base: ${BASE}
 sdks:
-  - name: try-deno
+  - name: try-ouvill-deno

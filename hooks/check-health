@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+if sudo -u workshop --login deno --version >/dev/null 2>&1; then
+    workshopctl set-health okay
+else
+    workshopctl set-health error "deno not available on PATH"
+fi

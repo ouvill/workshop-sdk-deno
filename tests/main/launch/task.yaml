@@ -8,7 +8,8 @@ restore: |
   workshop remove || true
 
 execute: |
-  # workshop exec -- deno --version
+  workshop exec -- deno --version
+  workshop exec -- deno eval 'console.log("works")'
 
 debug: |
   workshop tasks

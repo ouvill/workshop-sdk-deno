@@ -1,1 +1,4 @@
-# uv sync
+#!/usr/bin/bash
+# No project-specific setup is needed for this SDK.
+# This hook is a no-op and is preserved for future extensibility.
+true

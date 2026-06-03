@@ -1,2 +1,27 @@
-# apt-get update
-# apt-get install PACKAGE...
+#!/usr/bin/bash
+set -euo pipefail
+
+# Idempotent — safe to run on refresh.
+# NOTE on shell escaping:
+#   This uses an unquoted heredoc so that ${SDK} expands at hook runtime to the
+#   concrete SDK path. Variables that must expand at login time ($HOME, $PATH,
+#   $DENO_DIR, $DENO_INSTALL) are escaped with a backslash so they survive into
+#   the generated profile script literally.
+
+# Add SDK's deno to PATH and set Deno environment variables
+cat <<EOF >/etc/profile.d/deno.sh
+# Default Deno cache directory (does not override existing DENO_DIR)
+export DENO_DIR="\${DENO_DIR:-\${HOME}/.cache/deno}"
+
+# Default Deno install directory (does not override existing DENO_INSTALL)
+export DENO_INSTALL="\${DENO_INSTALL:-\${HOME}/.deno}"
+
+# Prepend the SDK's bin directory and DENO_INSTALL/bin to PATH
+export PATH="${SDK}/usr/bin:\${DENO_INSTALL:-\${HOME}/.deno}/bin:\$PATH"
+EOF
+
+# Generate bash completion if deno is available
+if [ -x "${SDK}/usr/bin/deno" ]; then
+    mkdir -p /etc/bash_completion.d
+    "${SDK}/usr/bin/deno" completions bash >/etc/bash_completion.d/deno.sh 2>/dev/null || true
+fi

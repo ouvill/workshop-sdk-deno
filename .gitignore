@@ -4,3 +4,9 @@
 # Workshop lock file — auto-generated on first workshop interaction.
 # See https://ubuntu.com/workshop/docs/reference/definition-files/workshop-definition.md
 .workshop.lock
+
+# sdkcraft build artifacts
+*.sdk
+parts/
+stage/
+prime/
